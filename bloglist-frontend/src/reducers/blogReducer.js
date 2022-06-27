@@ -17,7 +17,6 @@ const blogSlice = createSlice({
       return sortedBlogs;
     },
     updateLikes(state, action) {
-      console.log(action.payload);
       const likedBlog = action.payload;
       const id = likedBlog.id;
 
@@ -28,7 +27,6 @@ const blogSlice = createSlice({
       return state.filter((p) => p.id !== id);
     },
     loadComment(state, action) {
-      console.log(action.payload);
       const commentedBlog = action.payload;
       const id = commentedBlog.id;
       return state.map((b) => (b.id === id ? commentedBlog : b))
@@ -38,7 +36,6 @@ const blogSlice = createSlice({
 
 export const likeBlog = (blog) => {
   return async (dispatch) => {
-    console.log("id", blog.id);
     const likesAdd = {
       user: blog.user.id,
       title: blog.title,
@@ -46,9 +43,7 @@ export const likeBlog = (blog) => {
       url: blog.url,
       likes: blog.likes + 1,
     };
-    console.log("like", likesAdd);
     const blogToChange = await blogService.update(blog.id, likesAdd);
-    console.log("like await", blogToChange);
     dispatch(updateLikes(blogToChange));
   };
 };

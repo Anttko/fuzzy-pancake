@@ -71,7 +71,6 @@ describe('when logged in', function () {
       cy.contains('test1')
       cy.contains('test2')
       cy.get('.list').then((blogs) => {
-        console.log(blogs.children().children()[0])
         expect(blogs.children().children()[0]).to.contain('test2')
         expect(blogs.children().children()[1]).to.contain('test1')
       })

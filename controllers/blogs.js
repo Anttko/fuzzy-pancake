@@ -36,7 +36,6 @@ router.post('/:id/comments', async (request, response) => {
     ...blog._doc,
     comments: [...blog._doc.comments, body.comments],
   }
-  console.log('comment blog', commentedBlog)
   const saveBlog = await Blog.findByIdAndUpdate(
     request.params.id,
     commentedBlog

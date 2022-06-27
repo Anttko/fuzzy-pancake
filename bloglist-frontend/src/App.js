@@ -35,13 +35,6 @@ const App = () => {
   const matchUser = useMatch("/users/:id");
   const userById = (id) => allUsers.find((u) => u.id === id);
   const findUsr = matchUser ? userById(matchUser.params.id) : null;
-
-  console.log(match);
-  console.log("blog match,", blog);
-
-  console.log("user match", matchUser);
-  console.log("find user match,", findUsr);
-
   return (
     <div>
       <Menu />

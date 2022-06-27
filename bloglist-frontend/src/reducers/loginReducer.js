@@ -19,11 +19,9 @@ const loginSlice = createSlice({
 export const initializeUser = () => {
   return async (dispatch) => {
     const loggedUserJSON = window.localStorage.getItem("loggedBlogAppUser");
-    console.log("dd", loggedUserJSON);
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       blogService.setToken(user.token);
-      console.log("username", user);
       dispatch(setUser(user.username));
     }
   };
@@ -31,13 +29,11 @@ export const initializeUser = () => {
 
 export const handleLogin = (credentials) => {
   return async (dispatch) => {
-    console.log("credentials", credentials);
     const username = credentials.username.value;
     const password = credentials.password.value;
     const loginCredentials = { username, password };
     loginService.login(loginCredentials).then((user) => {
       dispatch(setUser(user.username));
-      console.log("login", user);
       blogService.setToken(user.token);
       window.localStorage.setItem("loggedBlogAppUser", JSON.stringify(user));
     }).catch(() => {

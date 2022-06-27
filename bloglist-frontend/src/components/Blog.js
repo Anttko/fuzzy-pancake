@@ -13,7 +13,6 @@ const Blog = ({ blog }) => {
   const comments = blog.comments;
 
   const userBlog = user && blog.user && user.username === blog.user.username;
-  console.log("userBlog",userBlog)
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
@@ -60,16 +59,10 @@ const Blog = ({ blog }) => {
     return null;
 
   }
-  console.log("user:", user, "blog.user", blog.user, "user.username:", user.username, "blog.user.username", blog.user.username)
 
   return (
     <div style={blogStyle}>
-      {console.log(
-        "user.username:",
-        user,
-        "blog.user.username:",
-        blog.user.username
-      )}
+     
       <h2>{blog.title}</h2>
       <div className="title">{blog.title}</div>
       <div className="author">{blog.author}</div>

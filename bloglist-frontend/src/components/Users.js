@@ -25,8 +25,6 @@ const Users = () => {
     width: "50%",
     padding: "10px"
   }
-
-  console.log("users", users);
   return (
     <div>
       <h2 style={headerStyle}>Users</h2>

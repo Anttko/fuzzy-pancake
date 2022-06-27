@@ -29,7 +29,7 @@ app.use(cors())
 
 app.use(express.json())
 
-/*healthcheck for ci/di*/
+/*healthcheck and versioning for ci/di*/
 app.get('/health', (req, res) => {
   res.send('ok')
 })

@@ -9,10 +9,6 @@ import {
 
 const BlogList = (props) => {
   const blogs = useSelector((state) => state.blogs);
-  console.log("blogs: ", blogs);
-
-  console.log(blogs);
-
   return (
     <BlogListing>
       <Title>Blogs</Title>
