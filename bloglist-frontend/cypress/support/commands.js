@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable linebreak-style */
 // ***********************************************
 // This example commands.js shows you how to

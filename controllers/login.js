@@ -19,6 +19,7 @@ router.post('/', async (request, response) => {
     username: user.username,
     id: user._id,
   }
+  // eslint-disable-next-line no-undef
   const token = jwt.sign(userForToken, process.env.SECRET)
   response
     .status(200)
