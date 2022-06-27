@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 const supertest = require('supertest')
 const bcrypt = require('bcrypt')
-
+/**/ 
 const app = require('../app')
 const helper = require('./test_helper')
 const api = supertest(app)
