@@ -29,6 +29,13 @@ app.use(cors())
 
 app.use(express.json())
 
+/*healthcheck for ci/di*/
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+app.get('/version', (req, res) => {
+  res.send('1')
+})
 app.use('/api/login', loginRouter)
 app.use('/api/blogs', userExtractor, blogsRouter)
 app.use('/api/users', usersRouter)

@@ -33,3 +33,12 @@ jobs:
           command: npm run test:e2e
           start: npm run start:test
           wait-on: http://localhost:3003
+      - name: heroku deploy
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')}}
+        uses: akhileshns/heroku-deploy@v3.12.12 
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: fuzzy-pancake
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          
+          
