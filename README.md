@@ -1,3 +1,3 @@
 # fuzzy-pancake
 
-- testing github actions
+- fullstackopen part 11, practicing pipeline building
