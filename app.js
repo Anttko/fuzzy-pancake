@@ -34,7 +34,11 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 app.get('/version', (req, res) => {
+
+  res.send('5')
+
   res.send('4')
+
 })
 app.use('/api/login', loginRouter)
 app.use('/api/blogs', userExtractor, blogsRouter)
